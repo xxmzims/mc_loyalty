@@ -13,6 +13,6 @@ spring:
         show_sql: true
   liquibase:
     change-log: classpath:db/changelog/2025/03/26-01-changelog.xml
-    enabled: true
+    enabled: false
 server:
   port: 8081

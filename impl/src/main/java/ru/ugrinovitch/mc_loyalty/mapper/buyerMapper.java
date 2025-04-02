@@ -6,7 +6,7 @@ import ru.ugrinovitch.mc_loyalty.response.BuyerLoyaltyResponse;
 
 
 @Component
-public class BonusMapper {
+public class buyerMapper {
 
     public BuyerLoyaltyResponse toBuyerLoyaltyResponse(BuyerLoyalty buyerLoyalty){
         return BuyerLoyaltyResponse.builder()
@@ -14,4 +14,5 @@ public class BonusMapper {
                 .amountBonusPoints(buyerLoyalty.getAmount())
                 .build();
     }
+
 }

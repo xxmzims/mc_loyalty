@@ -6,7 +6,6 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.RestController;
 import ru.ugrinovitch.mc_loyalty.API.LoyaltyController;
-import ru.ugrinovitch.mc_loyalty.request.BuyerRequest;
 import ru.ugrinovitch.mc_loyalty.response.BuyerLoyaltyResponse;
 import ru.ugrinovitch.mc_loyalty.service.LoyaltyService;
 
@@ -25,13 +24,5 @@ public class LoyaltyControllerImpl implements LoyaltyController {
     @Override
     public ResponseEntity<BuyerLoyaltyResponse> getBonusPoints(UUID id) {
         return new ResponseEntity<>(loyaltyService.getAmountBonusPoints(id), ACCEPTED);
-    }
-
-    @Override
-    public ResponseEntity<HttpStatus> addBuyersFromSpectra(List<BuyerRequest> requestDTO) {
-        System.out.println(requestDTO);
-        List<UUID> result = loyaltyService.addNewBuyersFromSpectra(requestDTO);
-        log.info("Добавлены в список покупатели с id: {}", result);
-        return ResponseEntity.ok(ACCEPTED);
     }
 }

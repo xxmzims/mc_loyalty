@@ -6,7 +6,6 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import ru.ugrinovitch.mc_loyalty.request.BuyerRequest;
 import ru.ugrinovitch.mc_loyalty.response.BuyerLoyaltyResponse;
 
 import java.util.List;
@@ -23,7 +22,4 @@ public interface LoyaltyController {
     @GetMapping("/{id}/bonus_points")
     ResponseEntity<BuyerLoyaltyResponse> getBonusPoints(@PathVariable @Parameter(description = "Уникальный идентификатор") UUID id);
 
-    @Operation(summary = "Доавление в список новых покупателей")
-    @PostMapping("/buyersFromSpectra")
-    ResponseEntity<HttpStatus> addBuyersFromSpectra(@RequestBody List<BuyerRequest> requestDTO);
 }
